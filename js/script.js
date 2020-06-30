@@ -1,10 +1,14 @@
 {
     const taskTable = [
         {
-            content: "Test task",
-            done: true,
+            content: "Test task 1",
         },
     ];
+
+    const removeTask = (index) => {
+        taskTable.splice(index, 1);
+        renderTasks();
+    };
 
     const renderTasks = () => {
         htmlTasksList = "";
@@ -13,12 +17,18 @@
             htmlTasksList += `
             <li>
                 ${task.content}
+                <button class="js-removeButton">Delete task</button>
             </li>
             `;
-
-        }
-
+        };
         document.querySelector(".js-tasks").innerHTML = htmlTasksList;
+
+        const removeButtons = document.querySelectorAll(".js-removeButton");
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeTask();
+            });
+        });
     };
 
     const addNewTask = (newTaskContent) => {

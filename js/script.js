@@ -6,10 +6,10 @@
         },
     ];
 
-    const renderTasks = () =>{
+    const renderTasks = () => {
         htmlTasksList = "";
 
-        for(const task of taskTable){
+        for (const task of taskTable) {
             htmlTasksList += `
             <li>
                 ${task.content}
@@ -18,11 +18,35 @@
 
         }
 
-        document.querySelector('.js-tasks').innerHTML = htmlTasksList;
+        document.querySelector(".js-tasks").innerHTML = htmlTasksList;
     };
 
-    const init = () =>{
+    const addNewTask = (newTaskContent) => {
+        taskTable.push({
+            content: newTaskContent,
+        });
+
         renderTasks();
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+
+        if (newTaskContent === "") {
+            return;
+        }
+
+        addNewTask(newTaskContent);
+    };
+
+    const init = () => {
+        renderTasks();
+
+        const form = document.querySelector(".js-form");
+
+        form.addEventListener("submit", onFormSubmit);
     };
 
     init();

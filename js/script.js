@@ -7,7 +7,7 @@
     ];
 
     const removeTask = (index) => {
-        taskTable.splice(index+1, 1);
+        taskTable.splice(index, 1);
         renderTasks();
     };
 
@@ -17,10 +17,10 @@
     };
 
     const bindEvents = () => {
-        const removeButtons = document.querySelectorAll(".js-removeButton");
+        const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-                removeTask();
+                removeTask(index);
             });
         });
 
@@ -40,7 +40,7 @@
             <li ${task.done ? " style=\"text-decoration: line-through\"" : ""} >
                 <button class="js-doneButton">Check</button>
                 ${task.content}
-                <button class="js-removeButton">Delete task</button>
+                <button class="js-remove">Delete task</button>
             </li>
             `;
         };

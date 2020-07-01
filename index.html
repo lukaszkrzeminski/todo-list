@@ -9,24 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
     <script defer src="js/script.js"></script>
     <title>Simple Todo list</title>
 </head>
 
 <body>
-    <main class="main">
-        <form class="form js-form">
-            <fieldset class="form__fieldset">
-                <legend class="form__legend">Simple Todo list</legend>
-                <input class="form__input js-newTask" placeholder="New task" autofocus>
-                <button class="form__button">Add Task</button>
-            </fieldset>
-        </form>
 
-        <div class="list">
-            <h2 class="list__header">Tasks to do:</h2>
-            <ul class="list__tasks js-tasks"></ul>
+    <main class="main">
+        <header class="header">
+            <h1>Simple todo list</h1>
+        </header>
+        <div class="container">
+            <h2 class="form__header">
+                Add new task
+            </h2>
+            <form class="form js-form">
+                <input class="form__input js-newTask" placeholder="Here place your new task" autofocus>
+                <button class="form__button">Add Task</button>
+            </form>
+
+            <div class="list">
+                <h2 class="list__header">Tasks to do:</h2>
+                <ul class="list__tasks js-tasks"></ul>
+            </div>
         </div>
     </main>
 </body>

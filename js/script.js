@@ -7,7 +7,7 @@
     ];
 
     const removeTask = (index) => {
-        taskTable.splice(index, 1);
+        taskTable.splice(index+1, 1);
         renderTasks();
     };
 
@@ -57,6 +57,10 @@
         renderTasks();
     };
 
+    const clearInput = () =>{
+        document.querySelector(".js-newTask").value = "";
+    };
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -67,6 +71,7 @@
         }
 
         addNewTask(newTaskContent);
+        clearInput();
     };
 
     const init = () => {

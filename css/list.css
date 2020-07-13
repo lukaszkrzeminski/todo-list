@@ -41,7 +41,23 @@
     color: white;
 }
 
+.list__button--done:hover{
+    background-color: hsl(120, 100%, 35%);
+}
+
+.list__button--done:active{
+    background-color: hsl(120, 100%, 45%);
+}
+
 .list__button--remove{
     background-color: red;
     color: white;
+}
+
+.list__button--remove:hover{
+    background-color: hsl(0, 100%, 55%);
+}
+
+.list__button--remove:active{
+    background-color: hsl(0, 100%, 60%);
 }

@@ -37,9 +37,9 @@
 
         for (const task of taskTable) {
             htmlTasksList += `
-            <li class="list__item" ${task.done ? " style=\"text-decoration: line-through\"" : ""} >
-                <button class="js-doneButton list__button list__button--done">${task.done ? "✔" : "X"}</button>
-                <span class="list__taskContent">${task.content}</span>
+            <li class="list__item">
+                <button class="js-doneButton list__button list__button--done">${task.done ? "✔" : " "}</button>
+                <span class="list__taskContent" ${task.done ? " style=\"text-decoration: line-through\"" : ""}>${task.content}</span>
                 <button class="js-remove list__button list__button--remove">🗑</button>
             </li>
             `;

@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    line-height: 1.15;
 }
 
 *, ::after, ::before{
@@ -7,11 +8,13 @@ html {
 }
 
 body{
-    font-family: 'Lora', sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 10px;
+    background-color: lightgrey;
 }
 
 .main{
     max-width: 800px;
-    margin: 0 auto;
+    margin: 60px auto;
+    padding: 10px;
 }

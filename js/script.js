@@ -1,9 +1,5 @@
 {
     const taskTable = [
-        {
-            content: "Test task 1",
-            done: false,
-        },
     ];
 
     const removeTask = (index) => {
@@ -72,6 +68,7 @@
 
         addNewTask(newTaskContent);
         clearInput();
+        
     };
 
     const init = () => {

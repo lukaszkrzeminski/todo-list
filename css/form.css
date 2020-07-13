@@ -41,3 +41,14 @@
 .form__button:active{
     background-color: hsl(180, 100%, 45%);
 }
+
+@media (max-width: 767px){
+    .form__input{
+        margin: 10px 15px;
+    }
+
+    .form__button{
+        flex-grow: 1;
+        margin: 10px 15px;
+    }
+}

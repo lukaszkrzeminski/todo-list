@@ -18,3 +18,9 @@ body{
     margin: 60px auto;
     padding: 10px;
 }
+
+@media (max-width: 767px){
+    .main{
+        margin: 20px auto;
+    }
+}

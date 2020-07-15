@@ -16,6 +16,8 @@ It's a simple page where user can add / check / delete tasks to do. In this proj
 ### Added features and future work
 
 - added responsive design for smaller screens
+- updated js script by using immutability
+- added feature that sets focus on the input after user enters a task
 
 - saving the list in Local storage
 
@@ -27,7 +29,7 @@ It's a simple page where user can add / check / delete tasks to do. In this proj
 - HTML
 - CSS
 - BEM methodology
-- JS
+- JS, immutability
 
 ### Author
 Łukasz Krzemiński

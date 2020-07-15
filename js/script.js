@@ -1,9 +1,13 @@
 {
-    const taskTable = [
+    let taskTable = [
     ];
 
     const removeTask = (index) => {
-        taskTable.splice(index, 1);
+        
+        taskTable = [
+            ...taskTable.slice(0, index),
+            ...taskTable.slice(index+1),
+        ];
         renderTasks();
     };
 
@@ -46,28 +50,33 @@
     };
 
     const addNewTask = (newTaskContent) => {
-        taskTable.push({
-            content: newTaskContent,
-        });
+        
+        taskTable = [
+            ...taskTable,
+            {content: newTaskContent},
+        ];
 
         renderTasks();
     };
 
-    const clearInput = () =>{
-        document.querySelector(".js-newTask").value = "";
+    const clearInput = (targetFocus) =>{
+        targetFocus.value = "";
+        targetFocus.focus();
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const targetFocus = document.querySelector(".js-newTask");
 
         if (newTaskContent === "") {
+            targetFocus.focus();
             return;
         }
 
         addNewTask(newTaskContent);
-        clearInput();
+        clearInput(targetFocus);
         
     };
 

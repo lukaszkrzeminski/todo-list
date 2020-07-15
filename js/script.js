@@ -1,19 +1,30 @@
 {
     let taskTable = [
     ];
+    let hideDoneTasks = false;
 
     const removeTask = (index) => {
-        
+
         taskTable = [
             ...taskTable.slice(0, index),
-            ...taskTable.slice(index+1),
+            ...taskTable.slice(index + 1),
         ];
-        renderTasks();
+        render();
     };
 
     const doneTask = (index) => {
         taskTable[index].done = !taskTable[index].done;
-        renderTasks();
+        render();
+    };
+
+    const addNewTask = (newTaskContent) => {
+
+        taskTable = [
+            ...taskTable,
+            { content: newTaskContent },
+        ];
+
+        render();
     };
 
     const bindEvents = () => {
@@ -45,21 +56,35 @@
             `;
         };
         document.querySelector(".js-tasks").innerHTML = htmlTasksList;
+    }
+
+    const renderButtons = () => {
+        const listButtons = document.querySelectorAll(".js-listButtons");
+
+        if(!taskTable.length) {
+            listButtons.innerHTML = "";
+            return;
+        }
+
+        htmlListButtons = `
+        <button class="list__button--toggleDone" ${taskTable.every(({done}) => !done) ? "disabled" : "" }>
+        ${hideDoneTasks ? "Wyświetl" : "Ukryj"} wykonane
+        </button>
+        <button class="list__button--checkAll" ${taskTable.every(({done}) => done) ? "disabled" : "" }>
+        Zakończ wszystkie
+        </button>
+        `;
+        document.querySelector(".js-listButtons").innerHTML = htmlListButtons;
+    }
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindEvents();
     };
 
-    const addNewTask = (newTaskContent) => {
-        
-        taskTable = [
-            ...taskTable,
-            {content: newTaskContent},
-        ];
-
-        renderTasks();
-    };
-
-    const clearInput = (targetFocus) =>{
+    const clearInput = (targetFocus) => {
         targetFocus.value = "";
         targetFocus.focus();
     };
@@ -77,11 +102,11 @@
 
         addNewTask(newTaskContent);
         clearInput(targetFocus);
-        
+
     };
 
     const init = () => {
-        renderTasks();
+        render();
 
         const form = document.querySelector(".js-form");
 

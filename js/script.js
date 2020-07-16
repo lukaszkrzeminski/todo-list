@@ -13,7 +13,15 @@
     };
 
     const doneTask = (index) => {
-        taskTable[index].done = !taskTable[index].done;
+       
+        taskTable = [
+            ...taskTable.slice(0, index),
+            {
+                ...taskTable[index],
+                done: !taskTable[index].done,
+            },
+            ...taskTable.slice(index + 1),
+        ];
         render();
     };
 

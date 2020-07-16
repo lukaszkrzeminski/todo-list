@@ -12,6 +12,8 @@ It's a simple page where user can add / check / delete tasks to do. In this proj
 - Type a new task in the input and send it to the list
 - Mark a task as done
 - Delete a task
+- Mark all task as done
+- Hide all done tasks
 
 ### Added features and future work
 

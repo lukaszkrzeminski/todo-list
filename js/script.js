@@ -113,10 +113,10 @@
         }
 
         htmlListButtons = `
-        <button class="list__button--showDone js-showDoneButton" ${taskTable.every(({ done }) => !done) ? "disabled" : ""}>
+        <button class="list__button list__button--showDone js-showDoneButton" ${taskTable.every(({ done }) => !done) ? "disabled" : ""}>
         ${hideDoneTasks ? "Wyświetl" : "Ukryj"} wykonane
         </button>
-        <button class="list__button--checkAll js-checkAllButton" ${taskTable.every(({ done }) => done) ? "disabled" : ""}>
+        <button class="list__button list__button--checkAll js-checkAllButton" ${taskTable.every(({ done }) => done) ? "disabled" : ""}>
         Zakończ wszystkie
         </button>
         `;

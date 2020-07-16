@@ -8,6 +8,16 @@
     border-bottom: lightgrey 2px solid;
     padding: 15px;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.list__functionButton{
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .list__tasks{
@@ -40,6 +50,7 @@
     padding: 10px;
     flex-shrink: 0;
     cursor: pointer;
+    transition: 1s;
 }
 
 .list__button--done{
@@ -56,14 +67,54 @@
 }
 
 .list__button--remove{
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     color: white;
 }
 
 .list__button--remove:hover{
-    background-color: hsl(0, 100%, 55%);
+    background-color: hsl(0, 100%, 60%);
 }
 
 .list__button--remove:active{
-    background-color: hsl(0, 100%, 60%);
+    background-color: hsl(0, 100%, 65%);
+}
+
+.list__button--showDone{
+    border: none;
+    background-color: white;
+    width: auto;
+    color: hsl(180, 100%, 25%);
+    transition: 1s;
+}
+
+.list__button--showDone:hover{
+    color: hsl(180, 100%, 35%);
+}
+
+.list__button--showDone:active{
+    color: hsl(180, 100%, 45%);
+}
+
+.list__button--showDone:disabled{
+    color: grey;
+}
+
+.list__button--checkAll{
+    border: none;
+    background-color: white;
+    width: auto;
+    color: teal;
+    transition: 1s;
+}
+
+.list__button--checkAll:hover{
+    color: hsl(180, 100%, 35%);
+}
+
+.list__button--checkAll:active{
+    color: hsl(180, 100%, 45%);
+}
+
+.list__button--checkAll:disabled{
+    color: grey;
 }

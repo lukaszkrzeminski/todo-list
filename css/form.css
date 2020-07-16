@@ -32,10 +32,12 @@
     color: white;
     border: none;
     flex-grow: 0;
+    transition: 1s;
 }
 
 .form__button:hover{
     background-color: hsl(180, 100%, 35%);
+    transform: scale(1.1);
     cursor: pointer;
 }
 

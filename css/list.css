@@ -1,32 +1,31 @@
-.list{
+.list {
     background-color: white;
     border: lightgrey 1px solid;
     margin-top: 15px;
 }
 
-.list__header{
+.list__header {
     border-bottom: lightgrey 2px solid;
     padding: 15px;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
     align-items: center;
 }
 
-.list__functionButton{
+.list__functionButton {
     font-size: 20px;
     display: flex;
     justify-content: flex-end;
 }
 
-.list__tasks{
+.list__tasks {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.list__item{
+.list__item {
     border-bottom: lightgrey 1px solid;
     margin: 10px;
     padding: 15px 0;
@@ -36,13 +35,13 @@
     flex-wrap: nowrap;
 }
 
-.list__taskContent{
+.list__taskContent {
     margin: 10px;
     padding: 10px;
     text-align: justify;
 }
 
-.list__button{
+.list__button {
     width: 40px;
     height: 40px;
     border: none;
@@ -53,33 +52,33 @@
     transition: 1s;
 }
 
-.list__button--done{
+.list__button--done {
     background-color: green;
     color: white;
 }
 
-.list__button--done:hover{
+.list__button--done:hover {
     background-color: hsl(120, 100%, 35%);
 }
 
-.list__button--done:active{
+.list__button--done:active {
     background-color: hsl(120, 100%, 45%);
 }
 
-.list__button--remove{
+.list__button--remove {
     background-color: rgb(255, 0, 0);
     color: white;
 }
 
-.list__button--remove:hover{
+.list__button--remove:hover {
     background-color: hsl(0, 100%, 60%);
 }
 
-.list__button--remove:active{
+.list__button--remove:active {
     background-color: hsl(0, 100%, 65%);
 }
 
-.list__button--showDone{
+.list__button--showDone {
     border: none;
     background-color: white;
     width: auto;
@@ -87,19 +86,19 @@
     transition: 1s;
 }
 
-.list__button--showDone:hover{
+.list__button--showDone:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.list__button--showDone:active{
+.list__button--showDone:active {
     color: hsl(180, 100%, 45%);
 }
 
-.list__button--showDone:disabled{
+.list__button--showDone:disabled {
     color: grey;
 }
 
-.list__button--checkAll{
+.list__button--checkAll {
     border: none;
     background-color: white;
     width: auto;
@@ -107,14 +106,25 @@
     transition: 1s;
 }
 
-.list__button--checkAll:hover{
+.list__button--checkAll:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.list__button--checkAll:active{
+.list__button--checkAll:active {
     color: hsl(180, 100%, 45%);
 }
 
-.list__button--checkAll:disabled{
+.list__button--checkAll:disabled {
     color: grey;
+}
+
+@media (max-width: 767px) {
+    .list__header {
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 2fr;
+    }
+    .list__functionButton {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
